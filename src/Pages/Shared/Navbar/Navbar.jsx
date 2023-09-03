@@ -8,12 +8,24 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [darkMode, setDarkMode] = useState(false);
 
+	const toggleTheme = () => {
+		const html = document.documentElement;
+
+		if (html.getAttribute('data-theme') === 'dark') {
+			html.removeAttribute('data-theme');
+			setDarkMode(false);
+		} else {
+			html.setAttribute('data-theme', 'dark');
+			setDarkMode(true);
+		}
+	};
+
 	return (
 		<div className="navbar bg-base-300 flex justify-between px-2 md:px-10">
 			<a className="font-bold text-2xl">
 				<span className="text-orange-600">Novel</span>Net
 			</a>
-			<ul className="ml-5 space-x-3 hidden md:flex items-center">
+			<ul className="ml-5 space-x-10 hidden md:flex items-center">
 				<li>
 					<NavLink>Home</NavLink>
 				</li>
@@ -28,7 +40,7 @@ const Navbar = () => {
 				</li>
 			</ul>
 			<div className="space-x-2">
-				<button onClick={() => setDarkMode(!darkMode)}>
+				<button onClick={toggleTheme}>
 					{darkMode ? <MdModeNight /> : <MdLightMode />}
 				</button>
 				<div className="avatar online">
