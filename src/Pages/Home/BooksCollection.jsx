@@ -12,32 +12,24 @@ const BooksCollection = () => {
 				spaceBetween={30}
 				pagination={{
 					clickable: true,
+					dynamicBullets: true,
 				}}
 				breakpoints={{
-					// when window width is >= 480px
-					480: {
-						width: 480,
+					'@0.00': {
+						slidesPerView: 1,
+						spaceBetween: 5,
+					},
+					'@0.75': {
 						slidesPerView: 2,
+						spaceBetween: 10,
 					},
-					// when window width is >= 640px
-					640: {
-						width: 640,
-						slidesPerView: 3,
-					},
-					// when window width is >= 768px
-					768: {
-						width: 768,
+					'@1.00': {
 						slidesPerView: 4,
+						spaceBetween: 15,
 					},
-					// when window width is >= 1024px
-					1024: {
-						width: 1024,
+					'@1.50': {
 						slidesPerView: 6,
-					},
-					// when window width is >= 1280px
-					1280: {
-						width: 1280,
-						slidesPerView: 6,
+						spaceBetween: 20,
 					},
 				}}
 				modules={[Pagination]}

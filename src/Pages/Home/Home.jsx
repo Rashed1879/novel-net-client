@@ -1,4 +1,5 @@
 import BooksCollection from './BooksCollection';
+import Categories from './Categories';
 import Hero from './Hero';
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
 		<>
 			<Hero />
 			<BooksCollection />
+			<Categories />
 		</>
 	);
 };
